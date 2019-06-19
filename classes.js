@@ -65,14 +65,14 @@ return (
       this.y + this.height > swimsuit.y
   )
 }
-// isTouching(bag) {
-  // return (
-  //     this.x < bag.x + bag.width &&
-  //     this.x + this.width > bag.x &&
-  //     this.y < bag.y + bag.height &&
-      // this.y + this.height > bag.y
-  // )
-// }
+ touching(bag) {
+  return (
+      this.x < bag.x + bag.width &&
+      this.x + this.width > bag.x &&
+      this.y < bag.y + bag.height &&
+      this.y + this.height > bag.y
+  )
+}
 }
 
 
@@ -159,9 +159,11 @@ class Score{
   this.score = 0
   }
 draw(){
-  ctx.fillStyle = "black"
+  ctx.fillStyle = 'white'
   ctx.fillText(`Score : ${this.score}`,this.x, this.y, this.width)
-}}
+}
+  
+}
 
 
  

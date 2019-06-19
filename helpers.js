@@ -62,25 +62,32 @@ function drawSwimsuit(){
   }) 
  }
 
-
- function checkCollition() {
-  swimsuits.forEach(swimsuit => {  
-    if (man.isTouching(swimsuit)) {
-    }  
-  })
-
- }
- 
  function Marcador(){
-  let valor = 0
-  swimsuits.forEach(swimsuit => {  
-    if (man.isTouching(swimsuit)) {
-     
-      valor++
-    }  
-  })
-   return valor
- }
   
+  let valor = 0
+  
+
+  swimsuits.forEach((swimsuit,i) => {  
+    if(man.isTouching(swimsuit)){
+      valor++
+      swimsuits.splice(i,1) 
+      
+    }
+    })
+
+
+    bags.forEach((bag,i)=>{
+      if(man.touching(bag)){
+        valor-=5
+      
+        bags.splice(i,1) 
+      }
+    }) 
+
+    
+    console.log(valor)
+    return valor
+}
+
 
 

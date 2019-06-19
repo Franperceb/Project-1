@@ -11,12 +11,11 @@ function update(){
   man.draw()
   drawSwimsuit()
   drawPlasticBag()
-  checkCollition()
   let points= Marcador()
   puntos.score += points
+  
+  console.log(puntos.score)
 }
-
-
 
 
 
@@ -39,7 +38,6 @@ function init() {
 
 
   function endGame(){
-    
       clearInterval(interval)
   }
      
