@@ -57,12 +57,12 @@ moveLeft() {
   this.x-= 150
 }
 
-isTouching(rock) {
+isTouching(swimsuit) {
   return (
-      this.x < rock.x + rock.width &&
-      this.x + this.width > rock.x &&
-      this.y < rock.y +rock.height &&
-      this.y + this.height > rock.y
+      this.x < swimsuit.x + swimsuit.width &&
+      this.x + this.width > swimsuit.x &&
+      this.y < swimsuit.y + swimsuit.height &&
+      this.y + this.height > swimsuit.y
   )
 }
 }
@@ -70,49 +70,29 @@ isTouching(rock) {
 
 
 
-
-class Stone  {
+class Plasticbag {
   constructor(x,y){
    this.x = x
    this.y = y
-   this.sx = 48
-   this.sy =48
-   this.height = 80
-   this.width = 40
+   this.sx = 100
+   this.sy =100
+   this.height = 100
+   this.width = 100
    
-   this.stone = new Image()
-   this.stone.src = './imgs/main.png'
+   this.plasticbag= new Image()
+   this.plasticbag.src = './imgs/plasticbag.png'
   }
  
   draw(){
   
-    ctx.drawImage(this.img, this.x, this.y, this.width, this.height)
- }
-}
-
-
-
-class Rock  {
-  constructor(x,y){
-   this.x = x
-   this.y = y
-   this.sx = 256
-   this.sy = 250
-   this.height = 100
-   this.width = 60
-   this.rock = new Image()
-   this.rock.src = '/imgs/swimsuit.png'
-  }
-
-
-  draw(){
-    if(frames %  4 === 0){
-      animateR++
-      if(animateR === 8) animateR = 0
+    
+    if(frames % 4 === 0){
+      animateS++
+      if(animateS === 4) animateS = 0
     }
     ctx.drawImage(
-      this.rock, //imagen
-      cycleLoop2[animate] *  256, // posición en x, de la imagen
+      this.plasticbag, //imagen
+      cycleLoop2[animate] * 3, // posición en x, de la imagen
       // iteramos entre los estados de la imagen: 0, 16, 32
       0, // posición en y, de la imagen
      // iteramos entre los estados de la imagen: 0, 16, 32
@@ -123,7 +103,44 @@ class Rock  {
       this.width, // ancho de la imagen en canvas
       this.height // alto de la imagen en canvas
     )
-    }
+ }
 }
+
+class Swimsuit {
+  constructor(x,y){
+   this.x = x
+   this.y = y
+   this.sx = 100
+   this.sy =100
+   this.height = 100
+   this.width = 100
+   
+   this.swimsuit = new Image()
+   this.swimsuit.src = './imgs/swimsuit.png'
+  }
+ 
+  draw(){  
+    if(frames % 4 === 0){
+      animateS++
+      if(animateS === 6) animateS = 0
+    }
+    ctx.drawImage(
+      this.swimsuit, //imagen
+      cycleLoop2[animate] * 5, // posición en x, de la imagen
+      // iteramos entre los estados de la imagen: 0, 16, 32
+      0, // posición en y, de la imagen
+     // iteramos entre los estados de la imagen: 0, 16, 32
+      this.sx, // ancho de la fuente (imagen)
+      this.sy, //alto de la fuente (imagen)
+      this.x, // el punto x de destino en el canvas
+      this.y, // el punto y de destino en el canvas
+      this.width, // ancho de la imagen en canvas
+      this.height // alto de la imagen en canvas
+    )
+ }
+}
+
+
+
 
 

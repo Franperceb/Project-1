@@ -9,16 +9,25 @@ function update(){
   
   board1.draw()
   man.draw()
-  drawRocks()
-  setTimeout(drawStones,10000)
+  drawSwimsuit()
+  drawPlasticBag()
   checkCollition()
 }
 
 
+function update2(){
+  
+   drawSwimsuit()
+   drawPlasticBag()
+   checkCollition()
+ }
+
 function init() {
+  
   interval = setInterval( update, 1000/60)
-  varSuit = setInterval(drawRocks, 1000/780)
-  varBag = setInterval(drawStones, 1000/780)
+  setInterval(update2,1000/480)
+  setInterval(drawSwimsuit, 1000/480)
+  setInterval(drawPlasticBag, 1000/480)
 }
 
 init()

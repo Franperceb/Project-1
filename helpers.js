@@ -1,26 +1,26 @@
 
-function generateStones(){ 
-  moveRocks()
-   stones.push(new Stone(incX, 0))
+function generatePlasticBag(){ 
+  movePlasticBag()
+   bags.push(new Plasticbag(incX, 0))
 
  }
  
 
  
- function drawStones(){
-   moveStones() 
-  if(frames % 500 == 0 && frames % 1500 ){
-   generateStones()
+ function drawPlasticBag(){
+   movePlasticBag() 
+  if(frames % 70 == 0 && frames % 140 ){
+   generatePlasticBag()
    }
-   stones.forEach(stone =>{
-     stone.y++
-     stone.draw()
+   bags.forEach(bags =>{
+     bags.y++
+     bags.draw()
      
    })
   }
-  function moveStones(){
+  function movePlasticBag(){
 
-    rocks.forEach(rock =>{
+    bags.forEach(bag =>{
       if(frames % 150  == 0 ){
         incX += 170;
       }
@@ -31,15 +31,15 @@ function generateStones(){
     }
 
 
-function generateRocks(){ 
- moveRocks()
-  rocks.push(new Rock(incX, -10))  
+function generateSwimsuit(){ 
+ moveSwimsuit()
+  swimsuits.push(new Swimsuit(incX, -10))  
 }
 
 
-function moveRocks(){
+function moveSwimsuit(){
 
-rocks.forEach(rock =>{
+swimsuits.forEach(swimsuits =>{
   if(frames % 3  == 0 ){
     incX += 170;
   }
@@ -49,21 +49,21 @@ rocks.forEach(rock =>{
 })
 }
 
-function drawRocks(){
+function drawSwimsuit(){
   if(frames % 70 == 0 && frames % 140 ==0){
-  generateRocks()
+  generateSwimsuit()
   }
-  rocks.forEach(rock =>{
-    rock.y++ 
-    rock.draw()    
+  swimsuits.forEach(swimsuit =>{
+    swimsuit.y++ 
+    swimsuit.draw()    
   }) 
  }
 
 
  function checkCollition() {
-  rocks.map(rock => {
+  swimsuits.map(rock => {
     if (man.isTouching(rock)) {
-      rock.y = 0
+      swimsuits.y = 0
     }
   })
 
