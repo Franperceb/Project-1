@@ -9,7 +9,8 @@ let frames = 0
 let interval
 let tim 
 let stones= []
-let varH = 0
+let varSuit = 0
+let varBag= 0
 let rocks =  []
 let incX = 0;
 const cycleLoop = [1, 0, 1, 2]

@@ -9,20 +9,19 @@ function update(){
   
   board1.draw()
   man.draw()
-  drawStones()
   drawRocks()
+  setTimeout(drawStones,10000)
   checkCollition()
 }
 
 
 function init() {
   interval = setInterval( update, 1000/60)
-  varH = setInterval(drawRocks, 1000/580)
+  varSuit = setInterval(drawRocks, 1000/780)
+  varBag = setInterval(drawStones, 1000/780)
 }
 
 init()
-
-
 
 
   function startGame() {
