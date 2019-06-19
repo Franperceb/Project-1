@@ -8,12 +8,14 @@ function generatePlasticBag(){
 
  
  function drawPlasticBag(){
-   movePlasticBag() 
-  if(frames % 70 == 0 && frames % 140 ){
-   generatePlasticBag()
+    
+  if(frames % 70 == 0 && frames % 140 ==0 ){
+    movePlasticBag()
+    generatePlasticBag()
+ 
    }
    bags.forEach(bags =>{
-     bags.y++
+     bags.y+=2
      bags.draw()
      
    })
@@ -22,9 +24,10 @@ function generatePlasticBag(){
 
     bags.forEach(bag =>{
       if(frames % 150  == 0 ){
-        incX += 170;
+        incX += 140;
+     
       }
-      if(incX > 340){
+      if(incX > 300){
         incX = 0;    
       } 
     })
@@ -33,7 +36,7 @@ function generatePlasticBag(){
 
 function generateSwimsuit(){ 
  moveSwimsuit()
-  swimsuits.push(new Swimsuit(incX, -10))  
+  swimsuits.push(new Swimsuit(positions[Math.floor(Math.random()*8)], 0))  
 }
 
 
@@ -41,16 +44,16 @@ function moveSwimsuit(){
 
 swimsuits.forEach(swimsuits =>{
   if(frames % 3  == 0 ){
-    incX += 170;
+    incX += 140;
   }
-  if(incX > 340){
+  if(incX > 300){
     incX = 0;    
   } 
 })
 }
 
 function drawSwimsuit(){
-  if(frames % 70 == 0 && frames % 140 ==0){
+  if(frames % 400 === 0 || frames %450 === 0 || frames % 500 ===0){
   generateSwimsuit()
   }
   swimsuits.forEach(swimsuit =>{
@@ -61,14 +64,23 @@ function drawSwimsuit(){
 
 
  function checkCollition() {
-  swimsuits.map(rock => {
-    if (man.isTouching(rock)) {
-      swimsuits.y = 0
-    }
+  swimsuits.forEach(swimsuit => {  
+    if (man.isTouching(swimsuit)) {
+    }  
   })
 
  }
  
+ function Marcador(){
+  let valor = 0
+  swimsuits.forEach(swimsuit => {  
+    if (man.isTouching(swimsuit)) {
+     
+      valor++
+    }  
+  })
+   return valor
+ }
   
 
 

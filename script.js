@@ -12,34 +12,35 @@ function update(){
   drawSwimsuit()
   drawPlasticBag()
   checkCollition()
+  let points= Marcador()
+  puntos.score += points
 }
 
 
-function update2(){
-  
-   drawSwimsuit()
-   drawPlasticBag()
-   checkCollition()
- }
+
+
 
 function init() {
   
-  interval = setInterval( update, 1000/60)
-  setInterval(update2,1000/480)
-  setInterval(drawSwimsuit, 1000/480)
-  setInterval(drawPlasticBag, 1000/480)
+  interval = setInterval( update, 1000/120)
+
 }
 
-init()
+
 
 
   function startGame() {
     if(interval) return
       interval = setInterval(update,1000/60)
-      
+      init()
+   
     }
-
 };
 
+
+  function endGame(){
+    
+      clearInterval(interval)
+  }
      
 

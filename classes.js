@@ -26,7 +26,7 @@ class Man{
   this.y = 450
   this.man = new Image()
   this.man.src = './imgs/main-1.jpg'
-  this.widht = 100
+  this.width = 100
   this.height = 320
   }
 draw(){
@@ -44,7 +44,7 @@ draw(){
     72, //alto de la fuente (imagen)
     this.x, // el punto x de destino en el canvas
     this.y, // el punto y de destino en el canvas
-    this.widht, // ancho de la imagen en canvas
+    this.width, // ancho de la imagen en canvas
     this.height  // alto de la imagen en canvas
   )    
 }
@@ -58,13 +58,21 @@ moveLeft() {
 }
 
 isTouching(swimsuit) {
-  return (
+return (
       this.x < swimsuit.x + swimsuit.width &&
       this.x + this.width > swimsuit.x &&
       this.y < swimsuit.y + swimsuit.height &&
       this.y + this.height > swimsuit.y
   )
 }
+// isTouching(bag) {
+  // return (
+  //     this.x < bag.x + bag.width &&
+  //     this.x + this.width > bag.x &&
+  //     this.y < bag.y + bag.height &&
+      // this.y + this.height > bag.y
+  // )
+// }
 }
 
 
@@ -142,5 +150,19 @@ class Swimsuit {
 
 
 
+class Score{
+  constructor(){
+  this.x = 0
+  this.y = 0
+  this.height= 100
+  this.width = 100
+  this.score = 0
+  }
+draw(){
+  ctx.fillStyle = "black"
+  ctx.fillText(`Score : ${this.score}`,this.x, this.y, this.width)
+}}
 
+
+ 
 
