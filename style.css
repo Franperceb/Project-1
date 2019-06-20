@@ -9,20 +9,18 @@
 
 .canv{
     display:flex;
-    justify-content: center;
-
-    
+    justify-content: space-around;
 }
 
 canvas{
- 
+    border:1px solid black;
 }
-
 
 .butt{
     display: flex;
     justify-content: center;
 }
+
 
 
 button{
@@ -74,19 +72,20 @@ h3{
     display:flex;
     justify-content: center;
     margin-right: 200px;
+
 }
 
-
+/*
 .player{
     display: flex;
     justify-content: space-between;
     margin-top: -1000px;
     margin-right: 10px;
     margin-left: 10px;
-    border: 1px solid black;
     padding-bottom: 500px;
 }
-
+*/
 .size{
-    font-size: 60px;
+    font-size: 30px;
 }
+
