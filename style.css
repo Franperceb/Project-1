@@ -1,21 +1,48 @@
 *{
     margin: 0;
     padding: 0;
-
-
+    background: url("./imgs/backg.png") no-repeat center center fixed;
+    background-size: cover; 
 }
 
 
+
+.canv{
+    display:flex;
+    justify-content: center;
+
+    
+}
 
 canvas{
-    border: 1px solid black;
-    margin-left: 0px;
+ 
 }
 
-body{
-    width: 1200px;
-    height: 500px;
+
+.butt{
+    display: flex;
+    justify-content: center;
 }
+
+
+button{
+  background: white;
+  border: 2px solid black;
+  color: black;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  padding: 15px 32px;
+  text-align: center;  
+  text-decoration: none;
+  font-size: 90px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 50px;
+  font-family: Helvetica;
+
+
+}
+    
+
 
 h1, h2, h3{
     font-family: 'Pacifico', cursive;
@@ -24,19 +51,42 @@ h1, h2, h3{
 }
 h1{
     margin-top: 50px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 h2{
     font-size: 80px;
     margin-top: 0px;
+    margin-left: 3px;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+
 h3{
     font-size: 100px;
-    margin-left: 550px;
+    margin-left: 120px;
+    margin-top: -70px;
+    color:white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .cont-h{
+    display:flex;
+    justify-content: center;
+    margin-right: 200px;
+}
+
+
+.player{
     display: flex;
-    margin-left: 600px;
-    margin-top: 20px;
-    margin-bottom:-50px;
+    justify-content: space-between;
+    margin-top: -1000px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border: 1px solid black;
+    padding-bottom: 500px;
+}
+
+.size{
+    font-size: 60px;
 }

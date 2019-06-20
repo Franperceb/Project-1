@@ -162,8 +162,8 @@ draw(){
   ctx.fillStyle = 'white'
   ctx.fillText(`Score : ${this.score}`,this.x, this.y, this.width)
 }
-  
 }
+
 
 
  

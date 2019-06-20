@@ -70,11 +70,10 @@ function drawSwimsuit(){
   swimsuits.forEach((swimsuit,i) => {  
     if(man.isTouching(swimsuit)){
       valor++
+      trajesDeBaño--
       swimsuits.splice(i,1) 
-      
-    }
+      }
     })
-
 
     bags.forEach((bag,i)=>{
       if(man.touching(bag)){
@@ -83,11 +82,9 @@ function drawSwimsuit(){
         bags.splice(i,1) 
       }
     }) 
-
-    
-    console.log(valor)
     return valor
 }
+
 
 
 

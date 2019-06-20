@@ -11,13 +11,25 @@ function update(){
   man.draw()
   drawSwimsuit()
   drawPlasticBag()
-  let points= Marcador()
-  puntos.score += points
-  
+  restantes()
   console.log(puntos.score)
+  
 }
 
 
+
+function restantes(){
+  let points= Marcador()
+  puntos.score += points
+  
+  if(puntos.score < 0 ){
+    puntos.score =0
+  }
+  
+
+console.log(trajesDeBaño)
+  
+}
 
 function init() {
   
@@ -30,9 +42,9 @@ function init() {
 
   function startGame() {
     if(interval) return
+      board1.draw()
       interval = setInterval(update,1000/60)
       init()
-   
     }
 };
 
