@@ -16,31 +16,17 @@ function update(){
  frames++
   ctx.clearRect(0,0,canvas.width,canvas.height)  
   ctx2.clearRect(0,0,canvas.width,canvas.height)  
-
+  score1.innerHTML = man.score
+  score2.innerHTML =man2.score
   board1.draw()
   board2.draw()
   man.draw()
   man2.draw()
   drawSwimsuit()
   drawPlasticBag()
-  restantes()
   endGame()
+  marcador()
   
-}
-
-
-
-function restantes(){
-  let points= Marcador()
-  puntos.score += points
-  let points2= Marcador2()
-  puntos2.score2 += points2
-  if(puntos.score < 0 ){
-    puntos.score = 0
-  }
-  if(puntos2.score < 0 ){
-    puntos2.score = 0
-  }
 }
 
 
@@ -49,9 +35,7 @@ function restantes(){
 
 
   function startGame() {
-    
-  
-    
+       
     if(interval) return
       board1.draw()
       interval = setInterval(update,1000/120)

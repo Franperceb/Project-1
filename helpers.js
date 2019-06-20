@@ -1,8 +1,8 @@
 
 function generatePlasticBag(){ 
   movePlasticBag()
-   bags.push(new Plasticbag(incX, 0))
-   bags2.push(new Plasticbag(incX, 0))
+   bags.push(new Plasticbag(incX, 0, ctx))
+   bags2.push(new Plasticbag(incX, 0,ctx2))
 
  }
  
@@ -22,7 +22,13 @@ function generatePlasticBag(){
      bags.draw()
      
    })
-  }
+
+  bags2.forEach(bags =>{
+    bags.y+=5
+    bags.draw()
+    
+  })
+ }
   function movePlasticBag(){
 
     bags.forEach(bag =>{
@@ -39,8 +45,8 @@ function generatePlasticBag(){
 
 function generateSwimsuit(){ 
  moveSwimsuit()
-  swimsuits.push(new Swimsuit(positions[Math.floor(Math.random()*8)], 0))  
-  swimsuits2.push(new Swimsuit(positions[Math.floor(Math.random()*8)], 0))  
+  swimsuits.push(new Swimsuit(positions[Math.floor(Math.random()*8)], 0,ctx))  
+  swimsuits2.push(new Swimsuit(positions[Math.floor(Math.random()*8)], 0,ctx2))  
   
 }
 
@@ -66,55 +72,56 @@ function drawSwimsuit(){
     swimsuit.y+=5
     swimsuit.draw()    
   }) 
+  swimsuits2.forEach(swimsuit =>{
+    swimsuit.y+=5
+    swimsuit.draw()    
+  }) 
  }
+  
 
- function Marcador(){
-  
-  let valor = 0
-  
+ function marcador(){
 
   swimsuits.forEach((swimsuit,i) => {  
     if(man.isTouching(swimsuit)){
-      valor++
+      man.score++
      
+
       swimsuits.splice(i,1) 
       }
     })
 
     bags.forEach((bag,i)=>{
-      if(man.isTouching(bag)){
-        valor-=5
-      
+      if(man.isTouch(bag)){
+        man.score-=5
+        if(man.score <0){
+          man.score =0
+        }
         bags.splice(i,1) 
       }
     }) 
 
-    return valor
-}
 
-
-function Marcador2(){
+    swimsuits2.forEach((swimsuit,i) => {  
+      if(man2.isTouching(swimsuit)){
+        man2.score++
+       
+        swimsuits2.splice(i,1) 
+        }
+      })
   
-  let valor1 = 0
+      bags2.forEach((bag,i)=>{
+        if(man2.isTouch(bag)){
+          man2.score-=5
+          if(man2.score <0){
+            man2.score =0
+          }
+          bags2.splice(i,1) 
+        }
+      }) 
   
 
-  swimsuits2.forEach((swimsuit,i) => {  
-    if(man2.touch(swimsuit)){
-      valor1++
-      swimsuits2.splice(i,1) 
-      }
-    })
 
-    bags2.forEach((bag,i)=>{
-      if(man2.touch(bag)){
-        valor1-=5
-      
-        bags2.splice(i,1) 
-      }
-    }) 
-
-    return valor1
+   console.log(man.score)
+   console.log(man2.score)
 }
-
-
 
