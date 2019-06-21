@@ -18,13 +18,13 @@ function generatePlasticBag(){
  
    }
    bags.forEach(bags =>{
-     bags.y+=5
+     bags.y+=8
      bags.draw()
      
    })
 
   bags2.forEach(bags =>{
-    bags.y+=5
+    bags.y+=8
     bags.draw()
     
   })
@@ -84,19 +84,17 @@ function drawSwimsuit(){
   swimsuits.forEach((swimsuit,i) => {  
     if(man.isTouching(swimsuit)){
       man.score++
-     
-
       swimsuits.splice(i,1) 
       }
     })
 
     bags.forEach((bag,i)=>{
       if(man.isTouch(bag)){
-        man.score-=5
+        man.score-=2
+        bags.splice(i,1) 
         if(man.score <0){
           man.score =0
         }
-        bags.splice(i,1) 
       }
     }) 
 
@@ -111,17 +109,13 @@ function drawSwimsuit(){
   
       bags2.forEach((bag,i)=>{
         if(man2.isTouch(bag)){
-          man2.score-=5
+          man2.score-=2
+          bags2.splice(i,1) 
           if(man2.score <0){
             man2.score =0
           }
-          bags2.splice(i,1) 
         }
       }) 
   
-
-
-   console.log(man.score)
-   console.log(man2.score)
 }
 

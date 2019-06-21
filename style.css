@@ -12,10 +12,6 @@
     justify-content: space-around;
 }
 
-canvas{
-    border:1px solid black;
-}
-
 .butt{
     display: flex;
     justify-content: center;
@@ -75,25 +71,64 @@ h3{
 
 }
 
-/*
-.player{
-    display: flex;
-    justify-content: space-between;
-    margin-top: -1000px;
-    margin-right: 10px;
-    margin-left: 10px;
-    padding-bottom: 500px;
-}
-*/
 .size{
     font-size: 30px;
 }
 
+#win{
+    font-family: 'Pacifico', cursive;
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: center;
+    font-size: 100px;
+}
+.winner{
+    width: 100px;
+    height:100px;
+    border: 1px solid black;
+}
+#scoreSwimsuit{
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    margin-top: 0px;
+    color: white;
+    border: 1px solid black;
+    background: black;
+    border-radius:  10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
 #score-p1{
- border: 1px solid black;
- text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+#score-1{
+    background: black;
+    border: 2px solid black;
+    padding: 50 20;
+    text-decoration: none;
+    border-radius: 10px;
+}
+#score-2{
+    background: black;
+    border: 2px solid black;
+      padding: 50 20;
+    text-decoration: none;
+    border-radius: 10px;
+}
 #score-p2{
-    
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#score-ss{
+    font-size: 40px;    
+}
+
+.keys{
+    h
+
 }
