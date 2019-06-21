@@ -25,6 +25,7 @@
      man2.x = 150
  })
 
-   
+ againButton.onclick = e => {
+  location.reload()
+}
 
-   

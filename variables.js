@@ -1,19 +1,23 @@
 let win = document.getElementById('win')
 let canvas = document.querySelector('canvas');
 let canvas2 = document.getElementById('canvas2')
+ let canvas3 = document.getElementById('canvas3')
 let btn = document.querySelector('#start-button');
 let player = document.querySelectorAll('.size')
 let title = document.querySelector('.title')
 let ctx = canvas.getContext('2d');
 let ctx2 = canvas2.getContext('2d');
+let ctx3 = canvas3.getContext('2d');
 let scoreSS = document.querySelector('#score-ss')
 let score1 = document.getElementById('score-1');
 let score2 = document.getElementById('score-2');
 let scoreSwimsuit = document.getElementById('scoreSwimsuit')
+let playAgainBtn = document.querySelector('#againButton') 
 
-
+againButton.style.display = 'none'
 canvas.style.display = 'none'
 canvas2.style.display = 'none'
+ canvas3.style.display = 'none'
 scoreSwimsuit.style.display='none'
 win.style.display = 'none'
 scoreSS.style.display= 'none'
@@ -38,7 +42,9 @@ const board1 = new Board()
 const board2 = new Board()
 const man = new Man(ctx)
 const man2 = new Man(ctx2)
-
+let gameOver = false; 
+let endAudio = new Audio()
+endAudio.src = "./celebrating.mp3"
 
 
 

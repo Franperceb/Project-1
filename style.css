@@ -67,7 +67,7 @@ h3{
 .cont-h{
     display:flex;
     justify-content: center;
-    margin-right: 200px;
+    margin-right: 100px;
 
 }
 
@@ -128,7 +128,14 @@ h3{
     font-size: 40px;    
 }
 
-.keys{
-    h
 
+#canvas3{
+    border: 1px solid black;
+}
+#againButton{
+   margin-left: 600px; 
+}
+
+#canvas3{
+    text-align:center;
 }
