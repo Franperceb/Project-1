@@ -43,8 +43,7 @@ const board2 = new Board()
 const man = new Man(ctx)
 const man2 = new Man(ctx2)
 let gameOver = false; 
-let endAudio = new Audio()
-endAudio.src = "./celebrating.mp3"
+
 
 
 

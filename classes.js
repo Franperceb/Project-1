@@ -37,6 +37,8 @@ class Man{
   this.score = 0
   this.celebrateImg = new Image();
   this.celebrateImg.src = './imgs/dancing.png';
+  this.audio = new Audio()
+    this.audio.src = "./imgs/celebrating.mp3"
   
 } 
 draw(){

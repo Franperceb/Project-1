@@ -30,14 +30,15 @@ function update(){
   drawPlasticBag()
   marcador()
   endGame()
-  }else{
+}else{
+    setTimeout(()=>{
+      man.audio.play()
+    }, 1000)
     winner()
-    endAudio.play()
   }
 }
 
 function winner(){
-  
   let player1 = man.score
   let player2 = man2.score
   if(player1>player2){
